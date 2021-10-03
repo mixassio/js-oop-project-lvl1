@@ -1,0 +1,36 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/mixassio/js-oop-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mixassio/js-oop-project-lvl1/actions)",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "test": "npx jest --bail"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixassio/js-oop-project-lvl1.git"
+  },
+  "author": "Mikhail Bondarev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mixassio/js-oop-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/mixassio/js-oop-project-lvl1#readme",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@jest/globals": "^27.0.1",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.0.1",
+    "jest-cli": "^27.0.1"
+  }
+}

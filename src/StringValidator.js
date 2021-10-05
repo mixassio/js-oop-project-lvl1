@@ -1,6 +1,7 @@
 export default class StringValidator {
   required() {
     this.req = true;
+    return this;
   }
 
   checRequired(str) {

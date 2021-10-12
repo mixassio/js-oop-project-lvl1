@@ -1,18 +1,28 @@
 // @ts-check
 
-import StringValidator from './StringValidator.js';
 import NumberValidator from './NumberValidator.js';
 import ArrayValidator from './ArrayValidator.js';
 import ObjectValidator from './ObjectValidator.js';
+import StringValidator from './StringValidator.js';
 
 export default class Validator {
-  // obj = null;
+  // listCustomValidator = {
+  //   string: {},
+  //   number: {},
+  // };
+  constructor() {
+    this.listCustomValidator = {
+      string: {},
+      number: {},
+    };
+  }
+
   string() {
-    return new StringValidator();
+    return new StringValidator(this);
   }
 
   number() {
-    return new NumberValidator();
+    return new NumberValidator(this);
   }
 
   array() {
@@ -22,4 +32,11 @@ export default class Validator {
   object() {
     return new ObjectValidator();
   }
+
+  addValidator(type, title, fn) {
+    this.listCustomValidator[type][title] = fn;
+    return this;
+  }
+
+  test(title, params) {}
 }

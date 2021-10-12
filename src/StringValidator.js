@@ -1,4 +1,8 @@
 export default class StringValidator {
+  constructor(param) {
+    this.listCustomValidator = param.listCustomValidator;
+  }
+
   required() {
     this.req = true;
     return this;
@@ -26,6 +30,16 @@ export default class StringValidator {
   }
 
   isValid(str) {
-    return this.checRequired(str) && typeof str === 'string' && this.checkMinLength(str) && this.checkContains(str);
+    return this.checRequired(str) && typeof str === 'string' && this.checkMinLength(str) && this.checkContains(str) && this.checkTest(str);
+  }
+
+  test(title, param) {
+    this.testFn = this.listCustomValidator.string[title];
+    this.paramTest = param;
+    return this;
+  }
+
+  checkTest(str) {
+    return this.testFn === undefined ? true : this.testFn(str, this.paramTest);
   }
 }

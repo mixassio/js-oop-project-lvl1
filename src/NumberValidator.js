@@ -1,4 +1,8 @@
 export default class NumberValidator {
+  constructor(param) {
+    this.listCustomValidator = param.listCustomValidator;
+  }
+
   required() {
     this.req = true;
   }
@@ -27,6 +31,16 @@ export default class NumberValidator {
   }
 
   isValid(num) {
-    return this.checRequired(num) && (typeof num === 'number' || num === null) && this.checkPositive(num) && this.checkRange(num);
+    return this.checRequired(num) && (typeof num === 'number' || num === null) && this.checkPositive(num) && this.checkRange(num) && this.checkTest(num);
+  }
+
+  test(title, param) {
+    this.testFn = this.listCustomValidator.number[title];
+    this.paramTest = param;
+    return this;
+  }
+
+  checkTest(str) {
+    return this.testFn === undefined ? true : this.testFn(str, this.paramTest);
   }
 }

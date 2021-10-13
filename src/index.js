@@ -26,17 +26,15 @@ export default class Validator {
   }
 
   array() {
-    return new ArrayValidator();
+    return new ArrayValidator(this);
   }
 
   object() {
-    return new ObjectValidator();
+    return new ObjectValidator(this);
   }
 
   addValidator(type, title, fn) {
     this.listCustomValidator[type][title] = fn;
     return this;
   }
-
-  test(title, params) {}
 }

@@ -1,4 +1,8 @@
 export default class ObjectValidator {
+  constructor(param) {
+    this.listCustomValidator = param.listCustomValidator;
+  }
+
   shape(obj) {
     Object.entries(obj).map(([k, v]) => {
       this[k] = v;

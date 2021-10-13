@@ -1,4 +1,8 @@
 export default class ArrayValidator {
+  constructor(param) {
+    this.listCustomValidator = param.listCustomValidator;
+  }
+
   required() {
     this.req = true;
   }

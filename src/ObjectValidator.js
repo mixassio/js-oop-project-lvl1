@@ -7,8 +7,8 @@ export default class ObjectValidator {
   }
 
   checkShape(obj) {
-    if (!obj) {
-      return false;
+    if (!obj || obj === {}) {
+      return true;
     }
     const checks = Object.entries(obj).map(([k, v]) => this[k].isValid(v));
     return !checks.includes(false);

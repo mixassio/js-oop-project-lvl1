@@ -17,7 +17,7 @@ export default class NumberValidator {
   }
 
   checkPositive(num) {
-    return this.positiv === undefined ? true : this.positiv && num > 0;
+    return this.positiv === undefined ? true : this.positiv && (num > 0 || num === null);
   }
 
   range(min, max) {

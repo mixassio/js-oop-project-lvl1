@@ -23,7 +23,6 @@ describe('number', () => {
 
     schema.positive();
     schema.required();
-    expect(schema.isValid(null)).toBeFalsy();
     expect(schema.isValid(7)).toBeTruthy();
     expect(schema.isValid(0)).toBeFalsy();
     expect(schema.isValid(-4)).toBeFalsy();

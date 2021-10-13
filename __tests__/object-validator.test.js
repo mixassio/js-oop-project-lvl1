@@ -10,7 +10,7 @@ describe('object', () => {
     });
 
     expect(schema.isValid({ name: 'kolya', age: 100 })).toBeTruthy(); // true
-    expect(schema.isValid({ name: 'maya', age: null })).toBeFalsy(); // true
+    expect(schema.isValid({ name: 'maya', age: null })).toBeTruthy(); // true
     expect(schema.isValid({ name: '', age: null })).toBeFalsy(); // false
     expect(schema.isValid({ name: 'ada', age: -5 })).toBeFalsy(); // false
   });
